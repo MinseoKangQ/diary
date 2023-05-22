@@ -8,7 +8,8 @@ object RetrofitBuilder {
     var api: API
     init {
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://223.194.131.72:8080/connection/")
+            // ipconfig getifaddr en0 명령어 입력 후 주소
+            .baseUrl("http://192.168.0.21:8080/connection/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
