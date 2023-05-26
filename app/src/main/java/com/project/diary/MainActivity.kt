@@ -1,10 +1,12 @@
 package com.project.diary
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,10 +19,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar?.hide()
 
-        val userId = findViewById<EditText>(R.id.id);
+        val userId = findViewById<EditText>(R.id.id)
         val userPassword = findViewById<EditText>(R.id.pw)
         val loginBtn = findViewById<Button>(R.id.login_button)
+        val signView = findViewById<TextView>(R.id.signView)
 
         loginBtn.setOnClickListener {
             id = userId.text.toString()
@@ -30,6 +34,12 @@ class MainActivity : AppCompatActivity() {
             user.pw = userPassword.text.toString()
             Login(user)
         }
+
+        signView.setOnClickListener {
+            val intent = Intent(this, SigninActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     fun Login(user: User) {
