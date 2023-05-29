@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -27,12 +28,14 @@ class MainActivity : AppCompatActivity() {
         val signView = findViewById<TextView>(R.id.signView)
 
         loginBtn.setOnClickListener {
-            id = userId.text.toString()
-            pw = userPassword.text.toString()
-            val user = User()
-            user.id = userId.text.toString()
-            user.pw = userPassword.text.toString()
-            Login(user)
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+//            id = userId.text.toString()
+//            pw = userPassword.text.toString()
+//            val user = User()
+//            user.id = userId.text.toString()
+//            user.pw = userPassword.text.toString()
+//            Login(user)
         }
 
         signView.setOnClickListener {
@@ -61,4 +64,5 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
 }
