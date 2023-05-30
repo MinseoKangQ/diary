@@ -8,20 +8,17 @@ import androidx.fragment.app.Fragment
 class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<TextView>(R.id.textView).text = "HomeFragment"
     }
 }
 
-class CalendarFragment : Fragment(R.layout.fragment_home) {
+class CalendarFragment : Fragment(R.layout.fragment_calendar) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<TextView>(R.id.textView).text = "CalendarFragment"
     }
 }
 
-class SettingsFragment : Fragment(R.layout.fragment_home) {
+class SettingsFragment : Fragment(R.layout.fragment_settings) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<TextView>(R.id.textView).text = "SettingsFragment"
     }
 }
