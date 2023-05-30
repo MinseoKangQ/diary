@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         loginBtn.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
+            finishAffinity() // 로그인 하면 기존 스택 비우기, 메인 화면이 HomeActivity 가 되도록
             startActivity(intent)
 //            id = userId.text.toString()
 //            pw = userPassword.text.toString()
