@@ -23,6 +23,8 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         app:menu="@menu/main_menu"
+        app:itemIconTint="@drawable/menu_selector_color"
+        app:itemTextColor="@drawable/menu_selector_color"
         />
 
 </LinearLayout>
