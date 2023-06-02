@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,9 +28,23 @@ class MainActivity : AppCompatActivity() {
         val signView = findViewById<TextView>(R.id.signView)
 
         loginBtn.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            finishAffinity() // 로그인 하면 기존 스택 비우기, 메인 화면이 HomeActivity 가 되도록
-            startActivity(intent)
+
+            // 로그인 처리 로직
+            // 로그인 성공 시
+            if(userId.text.toString() == "a" && userPassword.text.toString() == "1") {
+                // 뷰 모델에 아이디 값 전달
+                val intent = Intent(this, HomeActivity::class.java)
+                finishAffinity() // 로그인 하면 기존 스택 비우기, 메인 화면이 HomeActivity 가 되도록
+                startActivity(intent)
+            }
+
+            // 로그인 실패 시
+            else {
+                userId.text = null
+                userPassword.text = null
+                Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
+            }
+
 //            id = userId.text.toString()
 //            pw = userPassword.text.toString()
 //            val user = User()
