@@ -17,10 +17,8 @@ class SignInActivity : AppCompatActivity() {
         signInBtn.setOnClickListener {
             // 회원가입 로직
 
-
             // 화면 전환
-            val intent = Intent(this, MainActivity::class.java)
-            finishAffinity() // 기존 스택 비우기, 메인 화면이 MainActivity 가 되도록
+            val intent = Intent(this, SignInCompleteActivity::class.java)
             startActivity(intent)
 
         }
