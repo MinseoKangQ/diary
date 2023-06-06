@@ -12,12 +12,12 @@ class SignInCompleteActivity : AppCompatActivity() {
         setContentView(R.layout.activity_signin_complete)
         supportActionBar?.show()
 
-        val login_btn = findViewById<Button>(R.id.login_btn)
+        val login_btn_in_complete = findViewById<Button>(R.id.login_btn_in_complete)
 
-        login_btn.setOnClickListener {
+        login_btn_in_complete.setOnClickListener {
             // 화면 전환
             val intent = Intent(this, MainActivity::class.java)
-            finishAffinity() // 기존 스택 비우기, 메인 화면이 MainActivity 가 되도록
+            finishAffinity() // 화면 비우기
             startActivity(intent)
 
         }

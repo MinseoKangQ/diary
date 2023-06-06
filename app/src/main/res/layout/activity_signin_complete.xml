@@ -30,7 +30,7 @@
         app:srcCompat="@drawable/ic_signin_complete" />
 
     <Button
-        android:id="@+id/login_btn"
+        android:id="@+id/login_btn_in_complete"
         android:layout_width="210dp"
         android:layout_height="45dp"
         android:layout_marginBottom="32dp"

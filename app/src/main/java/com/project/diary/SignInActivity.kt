@@ -5,12 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toolbar
 
 class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signin)
-        supportActionBar?.show()
+
+        // 툴바 설정
+        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar_sign_in)
+        setSupportActionBar(toolbar)
+        supportActionBar?.apply{
+            title=""
+            setDisplayHomeAsUpEnabled(true)
+        }
 
         val signInBtn = findViewById<Button>(R.id.sign_in_button)
 
