@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
             }
 
+            // SpringBoot API 이용하는 경우 사용
 //            id = userId.text.toString()
 //            pw = userPassword.text.toString()
 //            val user = User()
@@ -60,6 +61,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    // SpringBoot API 이용하는 경우 사용
     fun Login(user: User) {
         val call = RetrofitBuilder.api.getLoginResponse(user)
         call.enqueue(object : Callback<String> {
