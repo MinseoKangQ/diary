@@ -3,6 +3,7 @@ package com.project.diary
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+// SpringBoot API 이용하는 경우 사용
 object RetrofitBuilder {
 
     var api: API
