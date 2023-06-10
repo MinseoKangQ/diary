@@ -3,7 +3,6 @@ package com.project.diary
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
@@ -20,12 +19,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_main)
 
         val userId = findViewById<EditText>(R.id.id)
         val userPassword = findViewById<EditText>(R.id.pw)
-        val loginBtn = findViewById<Button>(R.id.login_button)
-        val signView = findViewById<TextView>(R.id.signView)
+        val loginBtn = findViewById<Button>(R.id.loginBtn)
+        val signInTextView = findViewById<TextView>(R.id.signInTv)
 
         loginBtn.setOnClickListener {
 
@@ -54,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 //            Login(user)
         }
 
-        signView.setOnClickListener {
+        signInTextView.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
