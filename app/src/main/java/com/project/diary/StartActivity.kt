@@ -14,11 +14,13 @@ class StartActivity : AppCompatActivity(), CoroutineScope by MainScope() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loading)
 
+        // 1.5 초 후에 MainActivity 로 이동하도록 CoroutineScope 이용
         launch {
             delay(1500)
             val intent = Intent(this@StartActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
+
     }
 }
