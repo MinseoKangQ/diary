@@ -1,6 +1,7 @@
 package com.project.diary
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -23,6 +24,8 @@ class HomeActivity : AppCompatActivity() {
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNav)
         bottomNavigationView?.setupWithNavController(navController)
+
+        Log.d("12345", "HomeActivity Create")
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
