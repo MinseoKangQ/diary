@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
             // 로그인 처리 로직
             // 로그인 성공 시
             if(userId.text.toString() == "a" && userPassword.text.toString() == "1") {
-                // 뷰 모델에 아이디 값 전달
-                val intent = Intent(this, HomeActivity::class.java)
+//                // 뷰 모델에 아이디 값 전달
+                val intent = Intent(this, MenuActivity::class.java)
                 finishAffinity() // 로그인 하면 기존 스택 비우기, 메인 화면이 HomeActivity 가 되도록
                 startActivity(intent)
             }
