@@ -6,7 +6,9 @@ plugins {
 android {
     namespace 'com.project.diary'
     compileSdk 33
-
+    viewBinding {
+        enable = true
+    }
     defaultConfig {
         applicationId "com.project.diary"
         minSdk 27
