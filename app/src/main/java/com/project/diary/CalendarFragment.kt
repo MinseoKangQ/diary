@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import com.project.diary.databinding.FragmentCalendarBinding
 import java.time.LocalDate
 
@@ -22,6 +23,7 @@ private const val ARG_PARAM2 = "param2"
 class CalendarFragment : Fragment() {
 
     private lateinit var binding: FragmentCalendarBinding
+    val viewModel: CalendarViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,11 +36,20 @@ class CalendarFragment : Fragment() {
         // Inflate the layout for this fragment
 
         binding = FragmentCalendarBinding.inflate(inflater, container, false)
+        viewModel.stringLiveData.value = "완료"
 
         binding.calendarView.setOnDateChangeListener {
                 calendarView, year, month, day ->
             val selectedDate = "${year}년 ${month + 1}월 ${day}일 선택"
-            binding.textView.text=selectedDate
+            binding.textView.text = selectedDate
+        }
+
+        viewModel.stringLiveData.observe(viewLifecycleOwner) {
+            binding.textView2.text = "완료"
+        }
+
+        binding.dataTestBtn.setOnClickListener{
+            binding.textView2.text = viewModel.addString()
         }
 
         return binding.root
